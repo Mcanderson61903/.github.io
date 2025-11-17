@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — Michael C Anderson</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a class="logo" href="index.html">
+                <img src="assets/McA logo.png" alt="Michael Anderson Logo" width="50" height="50" />
+                <span>
+                    Michael C Anderson<br />
+                    <small><em>Cybersecurity & Criminal Justice Student</em></small>
+                </span>
+            </a>
+            <button class="nav-toggle" id="navToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="btn outline" id="themeToggle">🌓</button>
+        </nav>
+    </header>
+
+    <main class="section container">
+        <h1>Highlighted Projects</h1>
+        <div class="grid projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="assets/project_cipher.jpg" alt="Caesar Cipher Project" />
+                <div class="project-body">
+                    <h3>Caesar Cipher Encryption</h3>
+                    <p>A Python program that encrypts and decrypts text using the Caesar Cipher algorithm.</p>
+                    <div class="project-links">
+                        <a class="btn primary" href="assets/project_cipher.jpg" target="_blank" rel="noopener">🚀 Open Demo</a>
+                        <a class="btn outline" href="https://yourcodeurl.com/CesarCipher.py" target="_blank" rel="noopener">💾 View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <article class="card project-card">
+                <img src="assets/project_todo.jpg" alt="To-Do List app preview" class="project-image" />
+                <div class="project-body">
+                    <h3>To-Do List & Calendar (Python + Tkinter)</h3>
+                    <p>Interactive calendar with integrated to-do list. Built using Tkinter and tkcalendar; supports adding, viewing, and removing tasks.</p>
+                    <div class="project-links">
+                        <a class="btn outline" href="assets/project_todo.jpg" target="_blank" rel="noopener">🔹 Open Demo</a>
+                        <a class="btn outline" href="https://yourcodeurl.com/main.py" target="_blank" rel="noopener">💾 View Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="card project-card">
+                <img src="assets/project_portfolio.jpg" alt="Portfolio preview" class="project-image" />
+                <div class="project-body">
+                    <h3>Portfolio Website (HTML, CSS, JS)</h3>
+                    <p>Personal portfolio website built from scratch to showcase projects, resume, and contact form. Includes dark/light mode toggle.</p>
+                    <div class="project-links">
+                        <a class="btn outline" href="index.html" target="_blank">🌐 View Site</a>
+                        <a class="btn outline" href="assets/MichaelAnderson_Resume.pdf" target="_blank">📄 Resume</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <small>© <span id="year"></span> Michael C Anderson</small>
+            <nav aria-label="Footer">
+                <a href="projects.html" class="active">Projects</a>
+                <a href="skills.html">Skills</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+<!-- saved from url=(0086)file:///Users/michaelanderson/PycharmProjects/to%20do%20list/exportToHTML/main.py.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>main.py</title>
+
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table cellspacing="0" cellpadding="5" cols="1" width="100%" bgcolor="#606060">
+<tbody><tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></tbody></table>
+<pre><span class="s0">import </span><span class="s1">tkinter </span><span class="s0">as </span><span class="s1">tk</span>
+<span class="s0">from </span><span class="s1">tkinter </span><span class="s0">import </span><span class="s1">ttk</span><span class="s0">, </span><span class="s1">messagebox</span>
+<span class="s0">from </span><span class="s1">tkcalendar </span><span class="s0">import </span><span class="s1">Calendar</span>
+
+
+<span class="s2"># Section 1: Calendar GUI</span>
+<span class="s0">class </span><span class="s1">CalendarApp:</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">root):</span>
+        <span class="s1">self.root = root</span>
+        <span class="s1">self.root.title(</span><span class="s3">"Calendar and To-Do List"</span><span class="s1">)</span>
+
+        <span class="s1">self.setup_calendar()</span>
+        <span class="s1">self.setup_todo_list()</span>
+
+    <span class="s2"># Calendar Section</span>
+    <span class="s0">def </span><span class="s1">setup_calendar(self):</span>
+        <span class="s1">calendar_frame = ttk.LabelFrame(self.root</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">"Calendar"</span><span class="s1">)</span>
+        <span class="s1">calendar_frame.grid(row=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">column=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">padx=</span><span class="s4">10</span><span class="s0">, </span><span class="s1">pady=</span><span class="s4">10</span><span class="s1">)</span>
+
+        <span class="s1">self.calendar = Calendar(calendar_frame</span><span class="s0">, </span><span class="s1">selectmode=</span><span class="s3">"day"</span><span class="s1">)</span>
+        <span class="s1">self.calendar.pack(padx=</span><span class="s4">10</span><span class="s0">, </span><span class="s1">pady=</span><span class="s4">10</span><span class="s1">)</span>
+
+        <span class="s1">view_tasks_btn = ttk.Button(calendar_frame</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">"View Tasks"</span><span class="s0">, </span><span class="s1">command=self.view_tasks)</span>
+        <span class="s1">view_tasks_btn.pack(pady=</span><span class="s4">5</span><span class="s1">)</span>
+
+    <span class="s2"># To-Do List Section</span>
+    <span class="s0">def </span><span class="s1">setup_todo_list(self):</span>
+        <span class="s1">todo_frame = ttk.LabelFrame(self.root</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">"To-Do List"</span><span class="s1">)</span>
+        <span class="s1">todo_frame.grid(row=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s0">, </span><span class="s1">padx=</span><span class="s4">10</span><span class="s0">, </span><span class="s1">pady=</span><span class="s4">10</span><span class="s1">)</span>
+
+        <span class="s1">self.task_listbox = tk.Listbox(todo_frame</span><span class="s0">, </span><span class="s1">height=</span><span class="s4">15</span><span class="s0">, </span><span class="s1">width=</span><span class="s4">30</span><span class="s1">)</span>
+        <span class="s1">self.task_listbox.pack(side=tk.LEFT</span><span class="s0">, </span><span class="s1">padx=</span><span class="s4">5</span><span class="s0">, </span><span class="s1">pady=</span><span class="s4">5</span><span class="s1">)</span>
+
+        <span class="s1">scrollbar = ttk.Scrollbar(todo_frame</span><span class="s0">, </span><span class="s1">orient=</span><span class="s3">"vertical"</span><span class="s0">, </span><span class="s1">command=self.task_listbox.yview)</span>
+        <span class="s1">scrollbar.pack(side=tk.RIGHT</span><span class="s0">, </span><span class="s1">fill=</span><span class="s3">"y"</span><span class="s1">)</span>
+        <span class="s1">self.task_listbox.config(yscrollcommand=scrollbar.set)</span>
+
+        <span class="s1">task_entry_frame = tk.Frame(todo_frame)</span>
+        <span class="s1">task_entry_frame.pack(pady=</span><span class="s4">10</span><span class="s1">)</span>
+
+        <span class="s1">self.task_entry = ttk.Entry(task_entry_frame</span><span class="s0">, </span><span class="s1">width=</span><span class="s4">25</span><span class="s1">)</span>
+        <span class="s1">self.task_entry.grid(row=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">column=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">padx=</span><span class="s4">5</span><span class="s0">, </span><span class="s1">pady=</span><span class="s4">5</span><span class="s1">)</span>
+
+        <span class="s1">add_task_btn = ttk.Button(task_entry_frame</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">"Add Task"</span><span class="s0">, </span><span class="s1">command=self.add_task)</span>
+        <span class="s1">add_task_btn.grid(row=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">column=</span><span class="s4">1</span><span class="s0">, </span><span class="s1">padx=</span><span class="s4">5</span><span class="s1">)</span>
+
+        <span class="s1">remove_task_btn = ttk.Button(todo_frame</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">"Remove Task"</span><span class="s0">, </span><span class="s1">command=self.remove_task)</span>
+        <span class="s1">remove_task_btn.pack(pady=</span><span class="s4">5</span><span class="s1">)</span>
+
+        <span class="s1">clear_tasks_btn = ttk.Button(todo_frame</span><span class="s0">, </span><span class="s1">text=</span><span class="s3">"Clear All"</span><span class="s0">, </span><span class="s1">command=self.clear_tasks)</span>
+        <span class="s1">clear_tasks_btn.pack(pady=</span><span class="s4">5</span><span class="s1">)</span>
+
+    <span class="s2"># Event Handlers</span>
+    <span class="s0">def </span><span class="s1">add_task(self):</span>
+        <span class="s1">task = self.task_entry.get().strip()</span>
+        <span class="s0">if </span><span class="s1">task:</span>
+            <span class="s1">date = self.calendar.get_date()</span>
+            <span class="s1">self.task_listbox.insert(tk.END</span><span class="s0">, </span><span class="s3">f"</span><span class="s0">{</span><span class="s1">date</span><span class="s0">}</span><span class="s3">: </span><span class="s0">{</span><span class="s1">task</span><span class="s0">}</span><span class="s3">"</span><span class="s1">)</span>
+            <span class="s1">self.task_entry.delete(</span><span class="s4">0</span><span class="s0">, </span><span class="s1">tk.END)</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">messagebox.showwarning(</span><span class="s3">"Input Error"</span><span class="s0">, </span><span class="s3">"Task cannot be empty!"</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">remove_task(self):</span>
+        <span class="s1">selected_task_index = self.task_listbox.curselection()</span>
+        <span class="s0">if </span><span class="s1">selected_task_index:</span>
+            <span class="s1">self.task_listbox.delete(selected_task_index)</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">messagebox.showwarning(</span><span class="s3">"Selection Error"</span><span class="s0">, </span><span class="s3">"No task selected to remove!"</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">clear_tasks(self):</span>
+        <span class="s1">self.task_listbox.delete(</span><span class="s4">0</span><span class="s0">, </span><span class="s1">tk.END)</span>
+
+    <span class="s0">def </span><span class="s1">view_tasks(self):</span>
+        <span class="s1">selected_date = self.calendar.get_date()</span>
+        <span class="s1">tasks_on_date = [task </span><span class="s0">for </span><span class="s1">task </span><span class="s0">in </span><span class="s1">self.task_listbox.get(</span><span class="s4">0</span><span class="s0">, </span><span class="s1">tk.END) </span><span class="s0">if </span><span class="s1">task.startswith(selected_date)]</span>
+
+        <span class="s0">if </span><span class="s1">tasks_on_date:</span>
+            <span class="s1">tasks_str = </span><span class="s3">"</span><span class="s0">\n</span><span class="s3">"</span><span class="s1">.join(tasks_on_date)</span>
+            <span class="s1">messagebox.showinfo(</span><span class="s3">f"Tasks on </span><span class="s0">{</span><span class="s1">selected_date</span><span class="s0">}</span><span class="s3">"</span><span class="s0">, </span><span class="s1">tasks_str)</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">messagebox.showinfo(</span><span class="s3">f"Tasks on </span><span class="s0">{</span><span class="s1">selected_date</span><span class="s0">}</span><span class="s3">"</span><span class="s0">, </span><span class="s3">"No tasks found!"</span><span class="s1">)</span>
+
+
+<span class="s0">if </span><span class="s1">__name__ == </span><span class="s3">"__main__"</span><span class="s1">:</span>
+    <span class="s1">root = tk.Tk()</span>
+    <span class="s1">app = CalendarApp(root)</span>
+    <span class="s1">root.mainloop()</span>
+</pre>
+
+</body></html>

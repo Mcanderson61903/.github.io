@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Michael C Anderson - Resume Portfolio showcasing projects, skills, and accomplishments" />
+    <title>Michael C Anderson | Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===== Header ===== -->
+    <header class="header">
+      <nav class="nav container">
+        <a class="logo" href="index.html" aria-label="Home">
+          <img src="assets/McA logo.png" alt="Michael Anderson Logo" width="50" height="50" />
+          <span>
+            Michael C Anderson<br />
+            <small><em>Cybersecurity & Criminal Justice Student</em></small>
+          </span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn outline" id="themeToggle" aria-label="Toggle dark mode">🌓</button>
+      </nav>
+    </header>
+
+    <!-- ===== Hero Section ===== -->
+    <main>
+      <section class="hero container" id="hero">
+        <div class="hero-content">
+          <h1 class="gradient-text">Michael C Anderson</h1>
+          <h3>Cybersecurity & Criminal Justice Student</h3>
+          <h4><em>Grand Valley State University</em></h4>
+          <p>
+            Highly motivated cybersecurity student with a passion for system defense and threat mitigation. Continuously expanding expertise in network security, cryptography, and system testing to strengthen security posture and protect digital environments.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="projects.html">View My Projects</a>
+            <a class="btn outline" href="assets/MichaelAnderson_Resume.pdf" target="_blank">View Resume</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/ANDERSON_Finalized_Headshot.jpg" alt="Photo of Michael Anderson" class="headshot" />
+        </div>
+      </section>
+
+      <!-- ===== Education ===== -->
+      <section class="section container" id="education">
+        <h2>Education</h2>
+        <div class="edu-timeline">
+          <div class="edu-item">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-content card">
+              <h3>Grand Valley State University — Allendale, MI</h3>
+              <p><strong>Bachelor of Science in Cybersecurity</strong></p>
+              <p><strong>Minor in Criminal Justice</strong></p>
+              <p class="edu-date">Expected Graduation: <em>August 2026</em></p>
+              <ul class="edu-highlights">
+                <li>Hands-on experience with network defense and analysis.</li>
+                <li>Experience in cryptography and digital forensics tools.</li>
+              </ul>
+              <h4 class="coursework-title">Relevant Coursework:</h4>
+              <ul class="coursework-list">
+                <li>System Security</li>
+                <li>Digital Forensics</li>
+                <li>Cryptography</li>
+                <li>Network Security</li>
+                <li>Information Assurance</li>
+                <li>Software Engineering</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Certifications ===== -->
+      <section class="section container" id="certifications">
+        <h2>Certifications</h2>
+        <div class="grid">
+          <div class="edu-item">
+            <div class="edu-icon">📜</div>
+            <div class="edu-content card">
+              <article class="card">
+                <a href="assets/certs/SQL Basics Certificate.png" target="_blank" rel="noopener">
+                  <img
+                    src="assets/certs/SQL Basics Certificate.png"
+                    alt="HackerRank Certificate: SQL (Basic) - Michael Christopher Anderson"
+                    class="cert-image"
+                  />
+                </a>
+                <h4><em>HackerRank — SQL (Basic)</em></h4>
+                <p>Earned: Sep 8, 2025</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <small>© <span id="year"></span> Michael C Anderson. All rights reserved.</small>
+        <nav aria-label="Footer">
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+          <a href="assets/MichaelAnderson_Resume.pdf" target="_blank">Resume</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

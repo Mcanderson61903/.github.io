@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Michael C Anderson Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a class="logo" href="index.html">
+          <img src="assets/McA logo.png" alt="Michael Anderson Logo" width="50" height="50" />
+          <span>
+            Michael C Anderson<br />
+            <small>Cybersecurity / Criminal Justice Student</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn outline" id="themeToggle" aria-label="Toggle dark mode">🌓</button>
+      </nav>
+    </header>
+
+    <main class="container section" style="text-align:center;">
+      <h1>About Me</h1>
+      <p>
+        I’m Michael C Anderson, a Cybersecurity and Criminal Justice student at Grand Valley State University.
+        I’m passionate about network security, digital forensics, and ethical hacking — with a focus on defending systems and data from modern threats.
+      </p>
+
+      <h2>Key Focus Areas</h2>
+      <ul class="list" style="display:inline-block;text-align:left;">
+        <li>Network Defense & Penetration Testing</li>
+        <li>Cryptography and Encryption Protocols</li>
+        <li>Digital Forensics & Incident Response</li>
+        <li>System Security Architecture</li>
+      </ul>
+
+      <p>Outside of class, I work on Python projects, forensics labs, and hardware security challenges to build hands-on experience.</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <small>© <span id="year"></span> Michael C Anderson. All rights reserved.</small>
+        <nav aria-label="Footer">
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+          <a href="assets/MichaelAnderson_Resume.pdf" target="_blank">Resume</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
